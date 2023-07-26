@@ -1,0 +1,30 @@
+Install-Module -Force ExchangeOnlineManagement 
+
+Install-WSMan 
+
+Install-Module -Name PSWSMan 
+
+Set-ExecutionPolicy RemoteSigned 
+
+#Install the EXO (ExchangeOnline) V2 module with the following command. 
+Install-Module -Name ExchangeOnlineManagement 
+
+#Load the EXO V2 module. 
+Import-Module ExchangeOnlineManagement 
+
+
+#Connect to the Exchange Online PowerShell using an admin account. 
+
+Connect-ExchangeOnline -UserPrincipalName xxx@OnMicrosoft.com 
+
+#To Apply the policy use this one
+New-ApplicationAccessPolicy -AppId '1110000000000' -PolicyScopeGroupId 'xxx@xx.com' -AccessRight RestrictAccess -Description "Restrict app to group Legal Inbox." 
+
+#Test application policy
+
+Test-ApplicationAccessPolicy -Identity Dipesh@cqons.onMicrosoft.com -AppId 9c400805-3259-4b23-ad6e-143853c8a7df 
+
+#To Remove application access policy
+
+Remove-ApplicationAccessPolicy -Identity "" 
+
