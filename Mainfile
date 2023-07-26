@@ -24,6 +24,8 @@ New-ApplicationAccessPolicy -AppId '1110000000000' -PolicyScopeGroupId 'xxx@xx.c
 
 Test-ApplicationAccessPolicy -Identity Dipesh@cqons.onMicrosoft.com -AppId 9c400805-3259-4b23-ad6e-143853c8a7df 
 
+ Get-ApplicationAccessPolicy | Format-List Identity,Description,ScopeName,AccessRight,AppID.
+
 #To Remove application access policy
 
 Remove-ApplicationAccessPolicy -Identity "" 
